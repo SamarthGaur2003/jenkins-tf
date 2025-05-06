@@ -131,11 +131,11 @@ resource "aws_security_group" "demo-sg" {
 
 
 resource "aws_instance" "vm-nginx" {
-    ami = "ami-01938df366ac2d954"
+    ami = "ami-06b6e5225d1db5f46"
     instance_type = "t2.micro"
     subnet_id = aws_subnet.public.id
     vpc_security_group_ids = [aws_security_group.demo-sg.id]
-    key_name = "laptop-key"
+    key_name = "ubuntu1"
     
     tags = {
         Name = "Nginx-Instance"
@@ -153,11 +153,11 @@ resource "aws_instance" "vm-nginx" {
 
 
 resource "aws_instance" "vm-db" {
-    ami = "ami-01938df366ac2d954"
+    ami = "ami-06b6e5225d1db5f46"
     instance_type = "t2.micro"
     subnet_id = aws_subnet.private-db.id
     vpc_security_group_ids = [aws_security_group.demo-sg.id]
-    key_name = "laptop-key"
+    key_name = "ubuntu1"
     
     tags = {
         Name = "Database-Instance"
@@ -165,11 +165,11 @@ resource "aws_instance" "vm-db" {
 }
 
 resource "aws_instance" "vm-tom" {
-    ami = "ami-01938df366ac2d954"
+    ami = "ami-06b6e5225d1db5f46"
     instance_type = "t2.micro"
     subnet_id = aws_subnet.private-tom.id
     vpc_security_group_ids = [aws_security_group.demo-sg.id]
-    key_name = "laptop-key"
+    key_name = "ubuntu1"
     
     tags = {
         Name = "Tomcat-Instance"
